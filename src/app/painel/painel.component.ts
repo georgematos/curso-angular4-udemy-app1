@@ -10,8 +10,9 @@ import { FRASES } from './frases-mock';
 export class PainelComponent implements OnInit {
 
   frases: Frase[] = FRASES;
+  titulo: String = 'Traduza a frase:'
 
-  item: Frase;
+  indice: number;
   fraseEng: string;
   frasePtBr: string;
   resposta: string;
@@ -38,9 +39,10 @@ export class PainelComponent implements OnInit {
   }
 
   atualizarFrases() {
-    this.item = this.frases[Math.floor(Math.random() * FRASES.length)];
-    this.fraseEng = this.item.fraseEng;
-    this.frasePtBr = this.item.frasePtBr;
+    let indice = Math.floor(Math.random() * FRASES.length);
+    this.indice = indice;
+    this.fraseEng = this.frases[indice].fraseEng;
+    this.frasePtBr = this.frases[indice].frasePtBr;
   }
 
 }
