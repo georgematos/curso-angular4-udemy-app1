@@ -9,8 +9,9 @@ import { FRASES } from './frases-mock';
 })
 export class PainelComponent implements OnInit {
 
-  frases: Frase[] = FRASES;
-  titulo: String = 'Traduza a frase:'
+  public frases: Frase[] = FRASES;
+  public titulo: string = 'Traduza a frase:';
+  public resposta: string;
 
   constructor() {
 
@@ -20,10 +21,9 @@ export class PainelComponent implements OnInit {
 
   }
 
-  public atualizaResposta(): void {
-
-    console.log("Teste")
-
+  public atualizaResposta(resposta: Event): void {
+    this.resposta = (<HTMLInputElement>resposta.target).value;
+    console.log(this.resposta);
   }
 
 }
