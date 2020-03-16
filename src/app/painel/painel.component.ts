@@ -26,4 +26,12 @@ export class PainelComponent implements OnInit {
     console.log(this.resposta);
   }
 
+  public veriricarResposta(): void {
+    if(this.resposta === this.frases[0].frasePtBr) {
+      alert("acertou");
+    } else {
+      alert("errou");
+    }
+  }
+
 }
