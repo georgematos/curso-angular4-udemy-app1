@@ -26,15 +26,17 @@ export class PainelComponent implements OnInit {
 
   public atualizaResposta(resposta: Event): void {
     this.resposta = (<HTMLInputElement>resposta.target).value;
-    console.log(this.resposta);
   }
 
   public veriricarResposta(): void {
-    if(this.resposta === this.frases[0].frasePtBr) {
-      alert("acertou");
+
+    if (this.resposta === this.rodadaFrase.frasePtBr && this.rodada <= this.frases.length) {
+      this.rodada++;
+      this.rodadaFrase = this.frases[this.rodada];
     } else {
-      alert("errou");
+      alert("Errou, tente novamente.");
     }
+
   }
 
 }
