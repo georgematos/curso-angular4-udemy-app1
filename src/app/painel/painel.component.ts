@@ -12,37 +12,18 @@ export class PainelComponent implements OnInit {
   frases: Frase[] = FRASES;
   titulo: String = 'Traduza a frase:'
 
-  indice: number;
-  fraseEng: string;
-  frasePtBr: string;
-  resposta: string;
-
   constructor() {
-    this.atualizarFrases();
+
   }
 
   ngOnInit(): void {
 
   }
 
-  enviar() {
+  public atualizaResposta(): void {
 
-    if (this.frasePtBr === this.resposta) {
-      alert("Parabéns, você acertou.");
-    } else {
-      alert("Uma pena, você errou.");
-    }
+    console.log("Teste")
 
-    this.resposta = "";
-    this.atualizarFrases();
-
-  }
-
-  atualizarFrases() {
-    let indice = Math.floor(Math.random() * FRASES.length);
-    this.indice = indice;
-    this.fraseEng = this.frases[indice].fraseEng;
-    this.frasePtBr = this.frases[indice].frasePtBr;
   }
 
 }
