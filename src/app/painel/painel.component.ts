@@ -43,8 +43,13 @@ export class PainelComponent implements OnInit {
   }
 
   public atualizarRodada(): void {
-    this.rodadaFrase = this.frases[this.rodada];
-    this.resposta = "";
+    if (this.rodada < 4) {
+      this.rodadaFrase = this.frases[this.rodada];
+      this.resposta = "";
+    } else {
+      this.resposta = "Parabés você conseguiu.";
+    }
+
   }
 
 }
