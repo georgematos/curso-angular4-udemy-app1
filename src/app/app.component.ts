@@ -9,14 +9,10 @@ export class AppComponent {
   title = 'app1';
 
   public jogoEmAndamento: boolean = true
-  public mensagem: string;
+  public resultado: string;
 
   public encerrarJogo(tipo: string): void {
     this.jogoEmAndamento = false;
-    if (tipo === 'vitoria') {
-      this.mensagem = "Parabéns, você venceu!"
-    } else {
-      this.mensagem = "Sinto muito, você perdeu..."
-    }
+    this.resultado = tipo;
   }
 }
