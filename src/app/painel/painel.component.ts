@@ -63,11 +63,4 @@ export class PainelComponent implements OnInit, OnDestroy {
     }
   }
 
-  public jogarNovamente(): void {
-    this.frases = FRASES;
-    this.rodada = 0;
-    this.progresso = 0;
-    this.tentativas = 3;
-  }
-
 }

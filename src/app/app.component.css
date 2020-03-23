@@ -2,3 +2,8 @@ p {
   font-size: 25px;
   color: blueviolet;
 }
+
+.margin-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}

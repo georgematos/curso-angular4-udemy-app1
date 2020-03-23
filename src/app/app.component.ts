@@ -15,4 +15,9 @@ export class AppComponent {
     this.jogoEmAndamento = false;
     this.resultado = tipo;
   }
+
+  public reiniciar(): void {
+    this.jogoEmAndamento = true;
+    this.resultado = undefined;
+  }
 }

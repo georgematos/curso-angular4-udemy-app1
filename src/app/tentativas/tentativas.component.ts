@@ -22,7 +22,8 @@ export class TentativasComponent implements OnInit, OnChanges {
 
   // Sempre que o atributo vindo do componente pai mudar, esse método é executado
   ngOnChanges(changes: SimpleChanges): void {
-    this.coracoes[this.tentativas].cheio = false;
+    if (this.tentativas < this.coracoes.length)
+      this.coracoes[this.tentativas].cheio = false;
   }
 
   ngOnInit(): void {

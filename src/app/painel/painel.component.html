@@ -20,13 +20,17 @@
           <textarea
             class="form-control"
             (input)="atualizaResposta($event)"
-            [value] = "resposta"
+            [value]="resposta"
             rows="3"
           ></textarea>
         </div>
         <div class="row">
           <div class="col d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" (click)="veriricarResposta()">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="veriricarResposta()"
+            >
               Verificar
             </button>
           </div>
