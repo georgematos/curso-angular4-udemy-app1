@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASES } from './frases-mock';
 
@@ -17,6 +17,7 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frase;
 
   public progresso: number = 0;
+  public tentativas: number = 3;
 
   constructor() {
     this.atualizarRodada();
@@ -31,13 +32,18 @@ export class PainelComponent implements OnInit {
   }
 
   public veriricarResposta(): void {
-
     if (this.resposta === this.rodadaFrase.frasePtBr && this.rodada <= this.frases.length) {
       this.rodada++;
       this.progresso = this.progresso + (100 / this.frases.length);
       this.atualizarRodada();
     } else {
-      alert("Errou, tente novamente.");
+      if (this.tentativas > 1) {
+        this.tentativas--;
+        alert("Errou, tente novamente.");
+      } else {
+        this.tentativas--;
+        alert("Você perdeu todas as suas chances, volte ao início.")
+      }
     }
 
   }

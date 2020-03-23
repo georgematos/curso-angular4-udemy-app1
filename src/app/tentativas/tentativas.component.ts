@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Coracao } from '../shared/coracao.model';
 
 @Component({
@@ -6,7 +6,10 @@ import { Coracao } from '../shared/coracao.model';
   templateUrl: './tentativas.component.html',
   styleUrls: ['./tentativas.component.css']
 })
-export class TentativasComponent implements OnInit {
+export class TentativasComponent implements OnInit, OnChanges {
+
+  @Input('tentativas')
+  public tentativas: number;
 
   public coracoes: Coracao[] = [
     new Coracao(true),
@@ -14,7 +17,13 @@ export class TentativasComponent implements OnInit {
     new Coracao(true)
   ];
 
-  constructor() { }
+  constructor() {
+  }
+
+  // Sempre que o atributo vindo do componente pai mudar, esse método é executado
+  ngOnChanges(changes: SimpleChanges): void {
+    this.coracoes[this.tentativas].cheio = false;
+  }
 
   ngOnInit(): void {
   }
