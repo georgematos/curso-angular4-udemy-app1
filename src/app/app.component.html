@@ -1,4 +1,11 @@
 <app-topo></app-topo>
-<div *ngIf="jogoEmAndamento">
+<div *ngIf="jogoEmAndamento; else telaFinal">
   <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
 </div>
+<ng-template #telaFinal>
+  <div class="container" style="margin-top: 50px;">
+    <div class="jumbotron row">
+      <h3 class="display-4 col">{{ mensagem }}</h3>
+    </div>
+  </div>
+</ng-template>
